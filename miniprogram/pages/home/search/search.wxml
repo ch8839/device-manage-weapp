@@ -1,0 +1,21 @@
+<view>
+  <view>
+    <view class='text1'>输入设备编号</view>
+  </view>
+
+
+  <view class="search-bar">
+    <view class="picker-opts" bindtap='shuru2'>
+      <view class="picker">
+        <image src="../../../images/search.png" class="xx-img"></image>
+      </view>
+    </view>
+    <input type="text" value='{{inputvalue2}}' bindinput='oninput' placeholder='请输入DSNUM' placeholder-class="placeholder"></input>
+    <view class='clear' bindtap='onClear' hidden="{{inputvalue2==''}}"> </view>
+  </view>
+
+
+  <view>
+    <image bindtap="scanCode" src="../../../images/scan.png" class="scan"></image>
+  </view>
+</view>

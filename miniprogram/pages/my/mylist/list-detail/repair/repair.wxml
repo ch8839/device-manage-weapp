@@ -1,0 +1,19 @@
+<!--pages/my/mylist/list-detail/repair/repair.wxml-->
+<form bindsubmit='onSubmit' report-submit="true">
+<i-panel title="问题描述">
+    <i-checkbox-group current="{{current}}" bindchange="handleFruitChange">
+        <i-checkbox wx:for="{{problem}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-checkbox>
+    </i-checkbox-group>
+</i-panel>
+<view class="weui-cells__title">补充描述（可选）</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                  <textarea class="weui-textarea" bindinput="onExtra" placeholder="请输入详细描述" style="height: 3.3em" value="{{extra_describe}}" /> 
+                </view>
+            </view>
+        </view>
+
+ <button class="submit" form-type="submit" type="ghost">提交反馈</button>
+ </form>

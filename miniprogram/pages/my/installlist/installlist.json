@@ -1,0 +1,5 @@
+{"navigationBarTitleText": "待安装设备列表",
+"usingComponents": {
+  "i-alert": "../../../dist/alert/index",
+  "i-divider": "../../../dist/divider/index"
+}}

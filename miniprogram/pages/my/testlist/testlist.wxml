@@ -1,0 +1,58 @@
+<view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+
+<view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+  <view class="unread">
+    <text>{{testlist_num}}个待检验设备</text>
+    <image src="../../../images/allread.png" bindtap='select'></image>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" hidden="{{none1==0 ? '' : true}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+
+  <block wx:for="{{testlist}}" wx:key="testlist" wx:for-item="item">
+    <view catchtap='detail1' data-index="{{item._id}}" >
+      <i-alert desc closable bind:close="delete1" data-index="{{item._id}}">
+         <view slot="desc1">{{biaoTypes[item.defaultbiaoType]}}</view> 
+         <view slot="desc2">{{item._id}}</view> 
+        <view slot="desc">DSNUM：{{item.DSNUM}}</view>
+      </i-alert>
+    </view>
+  </block>
+  <view class="mag-submitbtn-wrap">
+       <button class="mag-submit-btn" type="default" plain="true" bindtap='back'>返回</button>
+    </view>
+  <view>
+    <modal title="删除设备" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden3}}" mask bindconfirm="confirm_one3" bindcancel="cancel_one3">
+      是否删除该设备？
+    </modal>
+  </view>
+</view>
+
+<view class="ctnt0 " hidden="{{currentNavtab==1 ? '' : true}}">
+  <view class="unread">
+    <text>{{untestlist_num}}个不合格设备</text>
+    <image src="../../../images/allread.png" bindtap='select2'></image>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" hidden="{{none2==0 ? '' : true}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+  <block wx:for="{{untestlist}}" wx:key="untestlist" wx:for-item="item">
+    <view catchtap='detail2' data-index="{{item._id}}">
+      <i-alert desc closable bind:close="delete2" data-index="{{item._id}}">
+         <view slot="desc1">{{biaoTypes[item.defaultbiaoType]}}</view> 
+         <view slot="desc2">{{item._id}}</view> 
+        <view slot="desc">DSNUM：{{item.DSNUM}}</view>
+      </i-alert>
+    </view>
+  </block>
+  <view>
+    <modal title="删除设备" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden4}}" mask bindconfirm="confirm_one4" bindcancel="cancel_one4">
+      是否删除该设备？
+    </modal>
+  </view>
+</view>

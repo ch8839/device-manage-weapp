@@ -1,0 +1,76 @@
+<!--pages/my/productlist/productlist-detail/productlist-detail.wxml-->
+<import src="../../../../template/list.wxml"/>
+<view class="ctnt0" >
+    <view class="weui-cells__title title2">
+        <text>请填写生产信息</text>
+    </view>
+
+    <view class="weui-cells">
+    
+     <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <text class="weui-label">序列号</text>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" bindinput="onId" placeholder-class="mag-plhd" placeholder="请填写_id" value="{{post._id}}" />
+        </view>
+      </view>
+
+        <view class="weui-cell weui-cell_select weui-cell_select-after">
+           <view class="weui-cell__hd">
+               <text class="weui-label">设备类型</text>
+           </view>
+           <view class="weui-cell__bd">
+               <picker bindchange="biaoTypeChange" value="{{defaultbiaoType}}" range="{{biaoTypes}}">
+                    <view class="picker weui-select not-default-val">
+                        {{biaoTypes[post.defaultbiaoType]}}
+                    </view>
+                </picker>
+           </view>
+        </view>
+
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">DSNUM</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" bindinput="onDSNUM" placeholder-class="mag-plhd" placeholder="请填写DSNUM" value="{{post.DSNUM}}" />
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_select weui-cell_select-after">
+           <view class="weui-cell__hd">
+               <text class="weui-label">通讯类型</text>
+           </view>
+           <view class="weui-cell__bd">
+               <picker bindchange="cardTypeChange" value="{{defaultcardType}}" range="{{cardTypes}}">
+                    <view class="picker weui-select not-default-val">
+                        {{cardTypes[post.defaultcardType]}}
+                    </view>
+                </picker>
+           </view>
+        </view>
+
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">SIM卡号</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" bindinput="oncardID" placeholder-class="mag-plhd" placeholder="请填写SIM卡号" value="{{post.cardID}}" />
+            </view>
+        </view>
+         
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">录入人</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input"   bindinput="onpeople1" value="{{post.people1}}" />
+              
+            </view>
+        </view>
+    </view>
+    <view class="mag-submitbtn-wrap">
+        <button class="mag-submit-btn" type="default" plain="true" bindtap="filterNow">提交</button>
+    </view>  
+</view>

@@ -1,0 +1,4 @@
+{"navigationBarTitleText": "待生产设备",
+"usingComponents": {
+  "i-alert": "../../../dist/alert/index"
+}}

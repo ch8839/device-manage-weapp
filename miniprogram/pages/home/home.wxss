@@ -1,0 +1,35 @@
+/* pages/home/home.wxss */
+page{
+  background: #f7f7ff;
+}
+
+.topImg {
+  width: 704rpx; 
+  height: 182rpx;
+  margin-left: 21rpx;
+  position: relative;
+  margin-top: 50rpx;
+}
+
+.button1 {
+  width: 40%;
+  height: 90rpx;
+  margin-top: 30px;
+  margin-left: 55rpx;
+  font-size: 20px;
+  letter-spacing: 5px;
+  display: inline-block;
+  border-radius: 20rpx;
+}
+
+.button2 {
+  width: 40%;
+  height: 90rpx;
+  margin-top: 30px;
+  margin-left: 50rpx;
+  font-size: 15px;
+  letter-spacing: 5px;
+  display: inline-block;
+  border-radius: 20rpx;
+}
+

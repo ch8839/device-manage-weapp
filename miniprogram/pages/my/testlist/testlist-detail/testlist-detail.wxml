@@ -1,0 +1,122 @@
+<view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="navTab" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab" >
+    {{itemName}}
+  </view>
+</view>
+
+<view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}" >
+<view class="ctnt0" >
+    <view class="weui-cells__title title2">
+        <text>请填写检验信息</text>
+    </view>
+
+    <view class="weui-cells">
+       
+        <view class="weui-cell weui-cell_select weui-cell_select-after">
+           <view class="weui-cell__hd">
+               <text class="weui-label">是否合格</text>
+           </view>
+           <view class="weui-cell__bd">
+               <picker bindchange="onQuality" value="{{defaultquality}}" range="{{qualitys}}">
+                    <view class="picker weui-select not-default-val">
+                        {{qualitys[post.defaultquality]}}
+                    </view>
+                </picker>
+           </view>
+        </view>
+              
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">检验人</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input"   bindinput="onpeople2" value="{{post.people2}}" />       
+            </view>
+        </view>
+    </view>
+
+  
+
+  <view class="qrcode1">
+    <canvas style="width: 200px;height:200px;" canvas-id="myQrcode2" bindtap='save1'></canvas>
+  </view> 
+
+    <view class="mag-submitbtn-wrap">
+      <button class="mag-submit-btn" type="default" plain="true" bindtap="filterNow2">提交</button>
+    </view>  
+</view>
+</view>
+
+
+<view class="ctnt0" hidden="{{currentNavtab==1 ? '' : true}}">
+    <view class="weui-cells__title title2">
+        <text>设备生产信息</text>
+    </view>
+    <view class="weui-cells">
+        <view class="weui-cell weui-cell_select weui-cell_select-after">
+           <view class="weui-cell__hd">
+               <text class="weui-label">设备类型</text>
+           </view>
+           <view class="weui-cell__bd">
+               <picker  value="{{defaultbiaoType}}" range="{{biaoTypes}}">
+                    <view class="picker weui-select not-default-val">
+                        {{biaoTypes[post.defaultbiaoType]}}
+                    </view>
+                </picker>
+           </view>
+        </view>
+
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">DSNUM</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" disabled="true" placeholder-class="mag-plhd" placeholder="请填写DSNUM" value="{{post.DSNUM}}" />
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_select weui-cell_select-after">
+           <view class="weui-cell__hd">
+               <text class="weui-label">通讯类型</text>
+           </view>
+           <view class="weui-cell__bd">
+               <picker  value="{{defaultcardType}}" range="{{cardTypes}}">
+                    <view class="picker weui-select not-default-val">
+                        {{cardTypes[post.defaultcardType]}}
+                    </view>
+                </picker>
+           </view>
+        </view>
+
+         <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">SIM卡号</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" disabled="true"bindinput="oncardID" placeholder-class="mag-plhd" placeholder="请填写SIM卡号" value="{{post.cardID}}" />
+            </view>
+        </view>
+              
+        <view class="weui-cell">
+           <view class="weui-cell__hd">
+               <text class="weui-label">生产日期</text>
+           </view>
+           <view class="weui-cell__bd">
+               <input class="weui-input" disabled="true" placeholder-class="mag-plhd"  value="{{post.date1}}" />
+           </view>
+        </view>
+        
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label">录入人</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" disabled="true" name="useInfro" id="useInfro"  value="{{post.people1}}" />             
+            </view>
+        </view>
+
+        
+</view>
+</view>
+
+

@@ -1,0 +1,8 @@
+
+<view class="map_container">
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="11" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
+</view>
+<view class="place_info">
+  <text>安装地区：{{area}}</text>
+  <text>该区域设备数量：{{count}}</text>
+</view>

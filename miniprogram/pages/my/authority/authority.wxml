@@ -1,0 +1,27 @@
+<!--pages/my/authority/authority.wxml-->
+<view class="weui-cells__title">权限管理</view>
+<view class="weui-cells weui-cells_after-title">
+<block wx:for="{{rolelist}}" wx:key="rolelist" wx:for-item="item" >
+<i-swipeout  i-class="i-swipeout-demo-item" operateWidth="{{120}}">
+  <view slot="content">
+      <view class="weui-cell" style='margin:-10px' data-index="{{item._id}}" >
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="{{item.userTx}}" style="width: 48px; height: 48px; display: block; border-radius: 80rpx;" background-size="cover"/>
+                </view>    
+                <view class="weui-cell__bd">
+                    <view>{{item.username}}</view>
+                </view>
+                <view class="weui-cell__bd">
+                <picker  data-index="{{item._id}}" bindchange="roleChange" value="{{roles[item.role]}}" range="{{roles}}">   
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{roles[item.role]}}</view>    
+                </picker>
+                </view>           
+       </view>
+    </view>
+
+  <view slot="button" class="i-swipeout-demo-button-group" catchtap='delete' data-index="{{item._id}}">
+            <view class="i-swipeout-demo-button">删除</view>
+  </view>
+</i-swipeout>          
+</block>
+</view>

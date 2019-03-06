@@ -1,0 +1,98 @@
+.unread{
+  color: #9A9C9B;
+  height: 60rpx;
+  padding: 10rpx 40rpx;
+  text-align: left;
+  width: 670rpx;
+}
+
+.image1{
+  height: 50rpx;
+  width:50rpx;
+  float: right
+}
+
+.button2{
+  height: 90rpx;
+  width:200rpx;
+  margin-left: 50px;
+}
+
+.bj{
+float:right 
+}
+
+.finish2{
+display: none
+}
+.bj2{
+display: none
+}
+
+.ctnt0{
+  margin-top:50px
+}
+.unread text{
+  display: inline-block;
+  line-height: 60rpx;
+  font-size: 22rpx;
+}
+.unread image{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  float: right;
+}
+.notify-item{
+  width: 680rpx;
+  background: #ffffff;
+  padding: 25rpx 70rpx 25rpx 0;
+  border-bottom: solid 1px #ebebeb;
+}
+.notify-item  image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+}
+.notify-item .avatar{
+  flex: 1;
+}
+.notify-item .notify-content{
+  flex: 4;
+  text-align: left;
+}
+.notify-item .notify-content text{
+  display: block;
+}
+.notify-item .notify-content .notify-source{
+  color: #818A8F;
+  font-size: 28rpx;
+  padding: 0 0 8rpx 0;
+}
+.notify-item .notify-content .notify-title{
+  color: #AFAFAF;
+  font-size: 30rpx;
+  line-height: 34rpx;
+}
+.placehold{
+  padding: 80rpx 0;
+  font-size: 28rpx
+}
+
+.item {
+  border-bottom: 2rpx solid #F4F5F7;
+}
+
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+
+.weui-btn{
+margin-top:15px
+}
+
+

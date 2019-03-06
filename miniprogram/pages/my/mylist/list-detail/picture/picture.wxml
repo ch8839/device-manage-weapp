@@ -1,0 +1,15 @@
+<!--pages/my/mylist/list-detail/picture/picture.wxml-->
+<view class="ctnt0" >
+  <view class="qrcode1">
+    <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode" bindtap='save1'></canvas>
+  </view>
+
+  <view class="weui-uploader__input-box" hidden="{{chooseFiles!==''}}">
+        <view class="weui-uploader__input" catchtap="onCamera"></view>
+    </view>
+   <view class="img-box" hidden="{{chooseFiles==''}}">
+      <image class="photo" src="{{chooseFiles}}" catchtap="uploadImage"></image>
+      <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" />
+   </view>
+ 
+</view>

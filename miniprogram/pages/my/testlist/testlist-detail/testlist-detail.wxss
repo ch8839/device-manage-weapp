@@ -1,0 +1,26 @@
+/* pages/my/testlist/testlist-detail/testlist-detail.wxss */
+.title2{
+margin-top: 60px
+}
+
+.ctnt0{
+  margin-top:50px
+}
+
+.qrcode1 {
+  position: relative;
+  left: 50%;
+  width:200px;
+  margin-left:-100px;
+  margin-top:20px;
+}
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+
+.weui-btn{
+margin-top:15px
+}

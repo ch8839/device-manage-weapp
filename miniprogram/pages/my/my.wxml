@@ -1,0 +1,68 @@
+<i-toast id="toast" />
+<view class="container more">
+  <view class="user flex-wrp">
+    <view class="avatar flex-item">
+    <label>
+      <image class="userinfo-avatar" src="{{userTx || defaultUrl}}" background-size="cover"></image>
+      <button open-type='getUserInfo' bindgetuserinfo='getUserInfoHandler'></button>
+    </label>
+    </view>
+    <view class="user-info flex-item">
+      <text class="userinfo-nickname">{{username}}</text>
+      <text class="edit weather" bindtap='gomap'>{{weatherData}}</text>
+    </view>
+  </view>
+
+ 
+
+  <view class="my">
+
+    <view class="my-item flex-wrp" hidden="{{alllist_s==1 ? '' : true}}" bindtap='onalllist'>
+      <view class="myitem-icon flex-item" >
+        <image src="../../images/draft.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>设备列表</text>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" hidden="{{productlist_s==1 ? '' : true}}" bindtap='onproductlist'>
+      <view class="myitem-icon flex-item" >
+        <image src="../../images/draft.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>生产列表</text>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" hidden="{{testlist_s==1 ? '' : true}}" bindtap='ontestlist'>
+      <view class="myitem-icon flex-item" >
+        <image src="../../images/draft.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>检验列表</text>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" hidden="{{installlist_s==1 ? '' : true}}" bindtap='oninstalllist'>
+      <view class="myitem-icon flex-item" >
+        <image src="../../images/draft.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>安装列表</text>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" hidden="{{authority_s==1 ? '' : true}}" bindtap='onAuthority'>
+      <view class="myitem-icon flex-item" >
+        <image src="../../images/icon/wx_app_setting.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>权限管理</text>
+      </view>
+    </view>
+
+    
+
+  </view>
+</view>
