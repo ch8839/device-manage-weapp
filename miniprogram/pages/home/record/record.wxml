@@ -136,7 +136,7 @@
   <button class="mag-submit-btn" type="default" plain="true" bindtap="last2">上一步</button>
   </view>
 <view class="mag-submitbtn-wrap top">
-  <button class="mag-submit-btn" type="default" plain="true" bindtap="filterNow2">提交</button>
+  <button class="mag-submit-btn" type="default" plain="true" bindtap="filterNow2">下一步</button>
 </view>
   </view>
 </view>

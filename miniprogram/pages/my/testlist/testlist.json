@@ -1,6 +1,6 @@
 {
   "enablePullDownRefresh": true,
-  "onReachBottomDistance":true,
+  "onReachBottomDistance":1,
   "navigationBarTitleText": "检验设备列表",
   "usingComponents": {
     "i-alert": "../../../dist/alert/index"

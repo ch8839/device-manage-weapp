@@ -14,7 +14,9 @@ Page({
     cardTypes: ['请选择通讯类型', '电信', '移动', '联通'],
     qualitys: ['合格', '不合格'],
     location: '',
-    chooseFiles: ''
+    chooseFiles: '',
+    date1:'',
+    date2:''
   },
 
   /**
@@ -64,14 +66,6 @@ Page({
     var that=this;
     this.setData({
       ['post.DSNUM']: e.detail.value
-    });
-    db.collection('list').where({
-      DSNUM: that.data.post.DSNUM
-    }).get().then(res => {
-      console.log(res)
-      if (res.data.length !== 0) {
-        that.data.aa=10;
-      }
     });
   },
 
@@ -214,7 +208,20 @@ Page({
     });
   },
 
-  filterNow1: function () {
+  filterNow1 :function() {
+    db.collection('list').where({
+      DSNUM: this.data.post.DSNUM
+    }).get().then(res =>{
+      if (res.data.length !== 0) {
+        app.alert('DSNUM已存在！');
+        return;
+      }else{
+        this.filterNow_success()
+      }
+    })   
+  },
+
+  filterNow_success: function () {
     var me = this.data.post;
     var that=this;
     if (!me.defaultbiaoType || me.defaultbiaoType == 0) {
@@ -225,15 +232,9 @@ Page({
       app.alert('DSNUM不能为空');
       return;
     }
+   
     if (!me._id) {
       app.alert('序列号不能为空');
-      return;
-    }
-    if (this.data.aa==10) {
-      app.alert('DSNUM已存在！');
-      this.setData({
-        aa: 0
-      })
       return;
     }
     
@@ -255,7 +256,10 @@ Page({
     let DSNUM_s = DSNUM.replace(/\ /g, "");//空格替换
     let DSNUM_8bit = DSNUM_s.substr(DSNUM_s.length - 8, 8)
     var d = new Date();
-    let date1 = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+    let date1 = util.formatTime(d)
+    this.setData({
+      date1 :date1
+    })
     let people1 = me.people1;
    
     wx.showModal({
@@ -318,10 +322,13 @@ Page({
     let DSNUM_s = DSNUM.replace(/\ /g, "");//空格替换
     let DSNUM_8bit = DSNUM_s.substr(DSNUM_s.length - 8, 8)
     var d = new Date();
-    let date1 = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+    let date1 = this.data.date1
     let people1 = me.people1;
 
-    let date2 = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+    let date2 = util.formatTime(d)
+    this.setData({
+      date2: date2
+    })
     let people2 = me.people2;
     let defaultquality = me.defaultquality;
 
@@ -394,10 +401,10 @@ Page({
     let DSNUM_s = DSNUM.replace(/\ /g, "");//空格替换
     let DSNUM_8bit = DSNUM_s.substr(DSNUM_s.length - 8, 8)
     var d = new Date();
-    let date1 = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+    let date1 = this.data.date1
     let people1 = me.people1;
        
-    let date2 = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();   
+    let date2 = this.data.date2
     let people2 = me.people2;
     let defaultquality = me.defaultquality;
 
@@ -407,7 +414,7 @@ Page({
     let longitude = location[0];
     let latitude = location[1];
     let location_d = me.location_d;
-    let date3 = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+    let date3 = util.formatTime(d)
    
     let people3 = me.people3;
     

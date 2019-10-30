@@ -200,7 +200,7 @@ Page({
       app.alert('你没有该权限！');
       return;
     }
-    if (this.data.location == '') {
+    if (!me.area) {
       app.alert('请选择合适的区域！');
       return;
     }

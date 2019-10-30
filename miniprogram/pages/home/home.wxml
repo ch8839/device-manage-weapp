@@ -1,9 +1,5 @@
 <image class="topImg" src="/images/p1-top.png"></image>
 <view class='home1'>
- <view class="button1">
     <button bindtap="record">设备录入</button>
-  </view>
-  <view class="button2">
     <button bindtap="search" >查询设备</button>
-  </view> 
 </view>

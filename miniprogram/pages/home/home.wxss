@@ -11,25 +11,22 @@ page{
   margin-top: 50rpx;
 }
 
-.button1 {
+.home1 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px
+}
+.home1 button {
   width: 40%;
   height: 90rpx;
-  margin-top: 30px;
-  margin-left: 55rpx;
-  font-size: 20px;
+  line-height: 90rpx;
+  font-size: 32rpx;
   letter-spacing: 5px;
-  display: inline-block;
-  border-radius: 20rpx;
+  background: #becee7;
+  color: #666;
+  border-radius: 5rpx;
+  border: none 
+  /* padding: 10px */
 }
 
-.button2 {
-  width: 40%;
-  height: 90rpx;
-  margin-top: 30px;
-  margin-left: 50rpx;
-  font-size: 15px;
-  letter-spacing: 5px;
-  display: inline-block;
-  border-radius: 20rpx;
-}
 
